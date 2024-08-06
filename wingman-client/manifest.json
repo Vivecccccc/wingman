@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Wingman - DBS iBanking",
+    "version": "1.0",
+    "description": "Wingman is a browser extension that navigate you through the DBS iBanking website with any question.",
+    "permissions": [
+      "activeTab",
+      "<all_urls>",
+      "tabs",
+      "webRequest"
+    ],
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+      "preprocessed_data.json"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content_script.js"]
+      }
+    ]
+  }
